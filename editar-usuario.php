@@ -73,8 +73,6 @@
                         <option value="Suzuki" id="Suzuki">Suzuki</option>
                         </select>
                     </div>
-
-                  
                     <div class="form-group">
                       <label for="serviços">Digite Serviço Desejado:</label><br>
                       <!-- Campo para inserir o serviço desejado -->
