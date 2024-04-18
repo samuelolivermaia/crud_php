@@ -11,6 +11,7 @@
     <title>Cadastro de Serviços</title>
   </head>
   <body>
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,64 +31,67 @@
         <div class="row">
             <div class="col-lg-12">
                 <?php
-                  // Inclui o arquivo de configuração
+                 // Inclui o arquivo de configuração
                   include("config.php");
-                  
+
                   // Seleciona o usuário a ser editado com base no ID passado pela URL
                   $sql = "SELECT * FROM usuarios WHERE id=".$_REQUEST["id"];
                   $res = $conn->query($sql) or die($conn->error);
                   $row = $res->fetch_object();
                 ?>
                 <form action="salvar.php" method="POST">
+                    <!-- Campo oculto para indicar a ação de cadastro -->
                     <input type="hidden" name="acao" value="editar">
-                    <!-- Campo oculto para enviar o ID do usuário -->
                     <input type="hidden" name="id" value="<?php print $row->id; ?>">
                     <div class="form-group">
                         <label>Nome</label>
-                        <!-- Campo para editar o nome, preenchido com o valor atual -->
+                        <!-- Campo para editar o nome do usuário -->
                         <input type="text" name="nome" class="form-control" value="<?php print $row->nome; ?>">
                     </div>
                     <div class="form-group">
                         <label>E-mail</label>
-                        <!-- Campo para editar o e-mail, preenchido com o valor atual -->
+                        <!-- Campo para inserir o e-mail do usuário -->
                         <input type="email" name="email" class="form-control" value="<?php print $row->email; ?>">
                     </div>
                     <div class="form-group">
                         <label>Telefone</label>
-                        <!-- Campo para editar o telefone, preenchido com o valor atual -->
+                        <!-- Campo para inserir o telefone do usuário -->
                         <input type="text" name="telefone" class="form-control" value="<?php print $row->telefone; ?>">
                     </div>
                     <div class="form-group">
-                        <label for="marca">Marca:</label>
+                        <label for="marca"><strong>Marca:</strong></label>
                         <!-- Select para escolher a marca -->
-                        <select name="marca" id="marca" class="form-control">
-                            <?php
-                                // Consulta as marcas disponíveis
-                                $sql_marca = "SELECT * FROM marca";
-                                $res_marca = $conn->query($sql_marca);
-                                while($marca = $res_marca->fetch_assoc()) {
-                                    echo "<option value='" . $marca['id'] . "'>" . $marca['nome'] . "</option>";
-                                }
-                            ?>
+                        <select name="marca"> 
+                        <option value="<?php print $row->marca; ?>" selected> <?php print $row->marca; ?></option>
+                        <option value="honda" id="honda">Honda</option>
+                        <option value="yamaha" id="yamaha">Yamaha</option>
+                        <option value="Dafra" id="Dafra">Dafra</option>
+                        <option value="Triumph" id="Triumph">Triumph</option>
+                        <option value="Traxx" id="Traxx">Traxx</option>
+                        <option value="Shineray" id="Shineray">Shineray</option>
+                        <option value="Kawasaki" id="Kawasaki">Kawasaki</option>
+                        <option value="Suzuki" id="Suzuki">Suzuki</option>
                         </select>
                     </div>
+
+                  
                     <div class="form-group">
-                        <label>Digite Serviço Desejado:</label>
-                        <!-- Campo para editar o serviço desejado, preenchido com o valor atual -->
-                        <input type="text" name="serviços" class="form-control" value="<?php print $row->serviços; ?>">
-                    </div>
-                    <div class="form-group">
-                        <!-- Botão para enviar o formulário de edição -->
+                      <label for="serviços">Digite Serviço Desejado:</label><br>
+                      <!-- Campo para inserir o serviço desejado -->
+                      <input type="text" id="serviços" name="serviços" size="90" value="<?php print $row->serviços; ?>"><br><br>
+                    </div>  
+                     <div class="form-group">
+                        <!-- Botão para enviar o formulário de cadastro -->
                         <button class="btn btn-success" type="submit">Enviar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <!-- Scripts do Bootstrap e jQuery -->
+     
+     <!-- Scripts do Bootstrap e jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
+                   
   </body>
 </html>

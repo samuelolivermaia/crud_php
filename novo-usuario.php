@@ -61,7 +61,7 @@
                         print "<td>".$row->serviços."</td>";
                         // Botões de edição e exclusão para cada usuário
                         print "<td>
-                                 <button class='btn btn-success' onclick=\"location.href='editar.php?id=".$row->id."';\">Editar</button>
+                                  <button class='btn btn-success' onclick=\"location.href='editar-usuario.php?id=".$row->id."';\">Editar</button>
                                  <button class='btn btn-danger' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='salvar.php?acao=excluir&id=".$row->id."';}else{false;}\">Excluir</button>
                                </td>";
                         print "</tr>";

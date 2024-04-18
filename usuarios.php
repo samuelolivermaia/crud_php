@@ -66,16 +66,17 @@
                         print "<td>".$row->serviços."</td>";
                         print "<td>
                                  <!-- Botão para editar o usuário -->
-                                 <button class='btn btn-success' onclick=\"location.href='editar.php?id=".$row->id."';\">Editar</button>
+                                 <button class='btn btn-success' onclick=\"location.href='editar-usuario.php?id=".$row->id."';\">Editar</button>
                                  <!-- Botão para excluir o usuário -->
                                  <button class='btn btn-danger' onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='salvar.php?acao=excluir&id=".$row->id."';}else{false;}\">Excluir</button>
                                </td>";
                         print "</tr>";
                       }
                       print "</table>";
+                      
                     }else{
                       // Se não houver resultados, exibe uma mensagem
-                      print "<p>Nenhum resultado encontrado</p>";
+                      print "<br><h1>Nenhum resultado encontrado</h1>";
                     }
                 ?>
             </div>
@@ -85,6 +86,6 @@
     <!-- Scripts do Bootstrap e jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
+           
   </body>
 </html>

@@ -35,38 +35,38 @@
                     <div class="form-group">
                         <label>Nome</label>
                         <!-- Campo para inserir o nome do usuário -->
-                        <input type="text" name="nome" class="form-control">
+                        <input type="text" name="nome" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>E-mail</label>
                         <!-- Campo para inserir o e-mail do usuário -->
-                        <input type="email" name="email" class="form-control">
+                        <input type="email" name="email" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label>Telefone</label>
                         <!-- Campo para inserir o telefone do usuário -->
-                        <input type="text" name="telefone" class="form-control">
+                        <input type="text" name="telefone" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="marca"><strong>Marca:</strong></label>
                         <!-- Select para escolher a marca -->
                         <select name="marca"> 
-                        <option value="marca" selected>Selecione opção</option>
-                        <option value="honda">Honda</option>
-                        <option value="yamaha">Yamaha</option>
-                        <option value="Dafra">Dafra</option>
-                        <option value="Triumph">Triumph</option>
-                        <option value="Traxx">Traxx</option>
-                        <option value="Shineray">Shineray</option>
-                        <option value="Kawasaki">Kawasaki</option>
-                        <option value="Suzuki">Suzuki</option>
+                        <option value="" id="marca" selected>Selecione opção</option>
+                        <option value="honda" id="honda">Honda</option>
+                        <option value="yamaha" id="yamaha">Yamaha</option>
+                        <option value="Dafra" id="Dafra">Dafra</option>
+                        <option value="Triumph" id="Triumph">Triumph</option>
+                        <option value="Traxx" id="Traxx">Traxx</option>
+                        <option value="Shineray" id="Shineray">Shineray</option>
+                        <option value="Kawasaki" id="Kawasaki">Kawasaki</option>
+                        <option value="Suzuki" id="Suzuki">Suzuki</option>
                         <!-- Outras opções de marcas -->
                         </select>
                     </div>
                     <div class="form-group">
                       <label for="serviços">Digite Serviço Desejado:</label><br>
                       <!-- Campo para inserir o serviço desejado -->
-                      <input type="text" id="serviços" name="serviços" size="90"><br><br>
+                      <input type="text" id="serviços" name="serviços" size="90" required><br><br>
                     </div>  
                      <div class="form-group">
                         <!-- Botão para enviar o formulário de cadastro -->
