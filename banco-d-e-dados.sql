@@ -1,0 +1,10 @@
+CREATE TABLE usuarios (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(100) NULL,
+  email VARCHAR(100) NULL,
+  telefone VARCHAR(11) NULL, 
+  marca  VARCHAR(45) NULL,
+  serviços VARCHAR(1000) NULL,
+  PRIMARY KEY(id)
+);
+
